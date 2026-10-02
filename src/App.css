@@ -1,0 +1,408 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* PANTALLA DE LOGIN */
+.login-container {
+  background-color: #000000;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo-title {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-style: italic;
+  text-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+}
+
+.logo-subtitle {
+  color: #a0a0a0;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.login-input {
+  width: 100%;
+  background-color: #555555;
+  border: none;
+  border-radius: 18px;
+  padding: 14px;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login-btn {
+  background-color: #631212;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 14px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #831818;
+}
+
+/* VISTA PRINCIPAL */
+.app-container {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.search-bar {
+  flex: 1;
+  background-color: #b5adae;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.qr-scan-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FILTROS */
+.filters-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-select {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+/* TARJETAS DE CLIENTES */
+.client-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.client-card {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.1s;
+}
+
+.client-card:active {
+  transform: scale(0.98);
+}
+
+/* COLORES DE ESTADO (SEGÚN TU DISEÑO) */
+.status-activa {
+  background-color: #63ff67; /* Verde */
+  color: #0b4f0e;
+}
+
+.status-por-vencer {
+  background-color: #ff9800; /* Naranja */
+  color: #ffffff;
+}
+
+.status-caducada {
+  background-color: #ff5e5e; /* Rojo[cite: 2] */
+  color: #ffffff;
+}
+
+.service-badges {
+  display: flex;
+  gap: 5px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  background-color: rgba(0,0,0,0.2);
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+/* BOTÓN FLOTANTE (+) */
+.fab-btn {
+  position: fixed;
+  bottom: 25px;
+  right: calc(50% - 220px + 20px);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #00ffff;
+  border: none;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .fab-btn {
+    right: 20px;
+  }
+}
+
+/* MODALES */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.btn-primary {
+  background-color: #631212;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-danger {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+/* LOGO IMAGEN */
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* MENSAJE DE ERROR LOGIN */
+.error-badge {
+  background-color: rgba(255, 94, 94, 0.2);
+  color: #ff5e5e;
+  border: 1px solid #ff5e5e;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.logout-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #d32f2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.logout-btn:hover {
+  background-color: rgba(211, 47, 47, 0.1);
+}
+
+.logout-btn:active {
+  transform: scale(0.92);
+}
+/* Botones de acción QR */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.qr-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-qr-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  max-width: 160px;
+}
+
+.btn-download {
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+.btn-download:hover {
+  background-color: #404040;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebc57;
+}
+
+.btn-qr-action:active {
+  transform: scale(0.96);
+}
